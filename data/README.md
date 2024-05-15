@@ -1,0 +1,1 @@
+A data folder can be mounted on this directory when running a Docker contaniner
