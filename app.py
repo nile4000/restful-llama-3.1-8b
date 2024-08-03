@@ -81,8 +81,8 @@ class ChatRequest(BaseModel):
 
 
 def generate(messages: list, 
-             temperature: float = None, 
-             top_p: float = None, 
+             temperature: float = None,
+             top_p: float = None,
              max_new_tokens: int = None) -> str:
     """Generates a response given a list of messages (conversation history) 
        and the generation configuration."""
