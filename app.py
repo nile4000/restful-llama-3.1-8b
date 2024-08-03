@@ -12,12 +12,12 @@ from transformers.utils import logging
 from pydantic import BaseModel
 
 # FastAPI imports
-from fastapi import Request, FastAPI
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 import torch
 
-# Set up logging 
+# Set up logging
 logging.set_verbosity_info()
 logger = logging.get_logger("transformers")
 
@@ -73,14 +73,14 @@ logger.info("Model is loaded")
 
 # Data model for making POST requests to /chat
 class ChatRequest(BaseModel):
-    """Class representing a chat-request"""
+    """Class representing a data-model"""
     messages: list
     temperature: Union[float, None] = None
     top_p: Union[float, None] = None
     max_new_tokens: Union[int, None] = None
 
 
-def generate(messages: list, 
+def generate(messages: list,
              temperature: float = None,
              top_p: float = None,
              max_new_tokens: int = None) -> str:
@@ -88,15 +88,15 @@ def generate(messages: list,
        and the generation configuration."""
 
     temperature = (
-        temperature if temperature is not None 
+        temperature if temperature is not None
         else default_generation_config["temperature"]
     )
     top_p = (
-        top_p if top_p is not None 
+        top_p if top_p is not None
         else default_generation_config["top_p"]
     )
     max_new_tokens = (
-        max_new_tokens if max_new_tokens is not None 
+        max_new_tokens if max_new_tokens is not None
         else default_generation_config["max_new_tokens"]
     )
     prompt = pipe.tokenizer.apply_chat_template(
@@ -140,7 +140,7 @@ def chat(chat_request: ChatRequest):
     if not is_system_prompt(messages[0]):
         messages.insert(0, {"role": "system", "content": DEFAULT_SYSTEM_PROMPT})
 
-    logger.info("Generating response...") 
+    logger.info("Generating response...")
     response = generate(messages, temperature, top_p, max_new_tokens)
     logger.info(f"/chat Response: {response}")
     return response
