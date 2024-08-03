@@ -1,6 +1,6 @@
 """
 This module sets up a FastAPI server to interact with a text-generation model.
-It uses Hugging Face transformers, Pydantic for request validation, and Torch for device management.
+It uses Hugging Face transformers, pydantic for request validation, and Torch for device management.
 """
 
 import os
@@ -73,7 +73,7 @@ logger.info("Model is loaded")
 
 # Data model for making POST requests to /chat
 class ChatRequest(BaseModel):
-    """Class representing a data-model"""
+    """Class representing the data-model"""
     messages: list
     temperature: Union[float, None] = None
     top_p: Union[float, None] = None
