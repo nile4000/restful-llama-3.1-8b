@@ -14,13 +14,16 @@ A simple RESTful service for the Meta-Llama-3.1-8B-Instruct language model.
 
 ## Pre-requisites
 
-1. A CUDA enabled GPU machine, runs optimal with 24GB vRAM
+1. A CUDA enabled GPU Space, runs optimal with 24GB vRAM
 2. Access to [LLaMa-3.1 weights](https://huggingface.co/meta-llama/Meta-Llama-3.1-8B-Instruct) from Huggingface
-3. Personal Access Token copied to Secret Access Token(space) named HUGGING_FACE_HUB_TOKEN
+3. New Public Hugging Face Space <https://huggingface.co/docs/hub/spaces-overview>, Blank Docker Container
+4. Personal Access Token (Read) <https://huggingface.co/docs/hub/security-tokens>, save it somewhere safe
+5. Secret Access Token in your space. Name: HUGGING_FACE_HUB_TOKEN, Value: Personal Access Token
+6. (Optional) Local .env file to store Personal Access Token
 
 ## Getting Started
 
-1. Copy/Push this repo via ssh to your huggingface-space, blank docker-container setup
+1. Push this repo via SSH to your Hugging Face space
 
 ## How to use
 

@@ -1,7 +1,7 @@
-# You can adapt the base image based on the CUDA version installed on the device
+# adapt cuda version based on your cuda-version, TERMINAL: `nvidia-smi`
 FROM nvidia/cuda:11.4.3-cudnn8-runtime-ubuntu20.04
 
-#Set up environment
+# Set up environment
 RUN apt-get update && apt-get install --no-install-recommends --no-install-suggests -y curl
 RUN apt-get install -y git
 RUN apt-get install unzip
@@ -16,14 +16,13 @@ COPY . .
 
 # Create cache directory and set permissions
 RUN mkdir -p /restful-llama-3/cache && chmod -R 777 /restful-llama-3/cache
+# Make start_app.sh executable
+RUN chmod +x /restful-llama-3/start_app.sh
 
 ENV LC_ALL=C.UTF-8
 ENV LANG=C.UTF-8
 ENV HF_HOME=/restful-llama-3/cache
 ENV HF_DATASETS_CACHE=/restful-llama-3/cache
-
-# Make start_app.sh executable
-RUN chmod +x /restful-llama-3/start_app.sh
 
 EXPOSE 7860
 CMD ["./start_app.sh"]
