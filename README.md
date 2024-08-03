@@ -28,7 +28,7 @@ A simple RESTful service for the Meta-Llama-3.1-8B-Instruct language model.
 ## How to use
 
 - After successful startup you will be redirected to /docs, the SWAGGER-UI
-- Embedded means <https://huggingface.co/docs/hub/spaces-embed>, so the url goes from <https://huggingface.co/spaces/nile4000/restful-llama3.1> to something like <https://nile4000-restful-llama3-1.hf.space>
+- Embedded means <https://huggingface.co/docs/hub/spaces-embed>, so the url goes from <https://huggingface.co/spaces/nile4000/restful-llama3.1> to something like <https://nile4000-restful-llama3-1.hf.space> for your API-calls
 - For interacting with the model, you need to send POST requests to <https://huggingface/embedded/chat>.
 
 Here is an example with curl:
