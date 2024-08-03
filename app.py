@@ -67,7 +67,7 @@ default_generation_config = {
 
 # Default when no system prompt is provided by the user.
 DEFAULT_SYSTEM_PROMPT = """You are a helpful assistant called Llama-3.1.
-                        Write out your funny and wrong answer in German!"""
+                        Write out your funny answers in German!"""
 
 logger.info("Model is loaded")
 
