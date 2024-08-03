@@ -24,13 +24,16 @@ logger = logging.get_logger("transformers")
 app = FastAPI()
 
 # Configure CORS
-origins = ["*"]
+ORIGINS = ["*"] #Cors-disabled
+METHODS = ["POST"]
+HEADERS = ["*"]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=ORIGINS,
     allow_credentials=True,
-    allow_methods=["POST"],
-    allow_headers=["*"],
+    allow_methods=METHODS,
+    allow_headers=HEADERS,
 )
 
 # Detect host device for torch
@@ -49,6 +52,7 @@ if not HUGGING_FACE_HUB_TOKEN:
 
 # Create model pipeline
 MODEL_ID = "meta-llama/Meta-Llama-3.1-8B-Instruct"
+
 pipe = pipeline(
     "text-generation",
     model=MODEL_ID,
