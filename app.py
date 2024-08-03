@@ -135,7 +135,7 @@ def is_system_prompt(msg):
 @app.get("/")
 def root():
     "Started endpoint message"
-    return {"message": "Up and running"}
+    return "<h1>FastAPI Up</h1>"
 
 @app.post("/chat")
 def chat(chat_request: ChatRequest):
