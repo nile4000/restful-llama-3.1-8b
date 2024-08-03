@@ -132,6 +132,11 @@ def is_system_prompt(msg):
     """Check if a message is a system prompt."""
     return msg["role"] == "system"
 
+@app.get("/")
+def root():
+    "Started endpoint message"
+    return {"message": "Up and running"}
+
 @app.post("/chat")
 def chat(chat_request: ChatRequest):
     """The main endpoint for interacting with the model. 
