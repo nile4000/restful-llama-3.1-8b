@@ -72,12 +72,14 @@ DEFAULT_SYSTEM_PROMPT = """You are a helpful assistant called Llama-3.1.
 logger.info("Model is loaded")
 
 # Data model for making POST requests to /chat
+# pylint: disable=R0903
 class ChatRequest(BaseModel):
     """Class representing the data-model"""
     messages: list
     temperature: Union[float, None] = None
     top_p: Union[float, None] = None
     max_new_tokens: Union[int, None] = None
+# pylint: enable=R0903
 
 
 def generate(messages: list,
