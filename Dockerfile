@@ -14,8 +14,16 @@ COPY ./requirements.txt /restful-llama-3
 RUN pip3 install --no-cache-dir -r requirements.txt
 COPY . .
 
+# Create cache directory and set permissions
+RUN mkdir -p /restful-llama-3/cache && chmod -R 777 /restful-llama-3/cache
+
 ENV LC_ALL=C.UTF-8
 ENV LANG=C.UTF-8
+ENV HF_HOME=/restful-llama-3/cache
+ENV HF_DATASETS_CACHE=/restful-llama-3/cache
 
-EXPOSE 5000
+# Make start_app.sh executable
+RUN chmod +x /restful-llama-3/start_app.sh
+
+EXPOSE 7860
 CMD ["./start_app.sh"]
