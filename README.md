@@ -1,8 +1,8 @@
 ---
-title: restful-Llama-3.1
-emoji: 📈
-colorFrom: purple
-colorTo: yellow
+title: Restful Llama3.1
+emoji: 🔥
+colorFrom: green
+colorTo: indigo
 sdk: docker
 pinned: false
 license: mit
