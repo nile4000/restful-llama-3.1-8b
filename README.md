@@ -23,7 +23,7 @@ A simple RESTful service for the Meta-Llama-3.1-8B-Instruct language model.
 
 ## Getting Started
 
-1. Push this repo via SSH to your Hugging Face space
+1. Push this repo via SSH to your personal Hugging Face space
 
 ## How to use
 
